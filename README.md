@@ -34,7 +34,7 @@ $grub-mkimage  -o bootx64.efi -O x86_64-efi  fat  iso9660 part_gpt part_msdos  \
              ls search search_label search_fs_uuid search_fs_file  gfxterm gfxterm_background \
              gfxterm_menu test all_video loadenv memdisk ext2 tar  -m memdisk.tar -c embeded.cfg
 ```
-3. copy the bootx64.efi to your /efi/boot folder
+3. copy the bootx64.efi to your /efi/boot folder<br/>
 Voila your EXT4 Live partition now boot as if a RAW iso image<br/>
 
 I include the created bootx64 herein so you can just copy it to you ESP/EFI and boot any ext4 LiveUSB/CD
