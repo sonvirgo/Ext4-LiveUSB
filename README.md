@@ -11,7 +11,7 @@ I digging the Grub rescue prompt and discover that bootx64.efi not load ext4 dri
 I try to patch the bootx64.efi and lead to these step to the success:
 
 1. Recreate memdisk and config file
-'''
+```
 $mkdir memdisk
 
 $nano memdisk/boot/grub/grub.cfg
@@ -20,9 +20,9 @@ $nano memdisk/boot/grub/grub.cfg
             source $prefix/x86_64-efi/grub.cfg
 
 $tar cvf memdisk.tar *
-'''
+```
 2. Recreate bootx64.efi with EXT4 support
-'''
+```
 $nano embeded.cfg
              insmod normal
              set root=(memdisk)
@@ -33,8 +33,10 @@ $grub-mkimage  -o bootx64.efi -O x86_64-efi  fat  iso9660 part_gpt part_msdos  \
              normal boot linux configfile loopback chain  efifwsetup efi_gop efi_uga \
              ls search search_label search_fs_uuid search_fs_file  gfxterm gfxterm_background \
              gfxterm_menu test all_video loadenv memdisk ext2 tar  -m memdisk.tar -c embeded.cfg
-'''
+```
 3. copy the bootx64.efi to your /efi/boot folder
 Voila your EXT4 Live partition now boot as if a RAW iso image<br/>
+
+I include the created bootx64 herein so you can just copy it to you ESP/EFI and boot any ext4 LiveUSB/CD
 
 Regards
