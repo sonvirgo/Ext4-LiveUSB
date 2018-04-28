@@ -19,7 +19,7 @@ $nano memdisk/boot/grub/grub.cfg
             set prefix=($root)/boot/grub
             source $prefix/x86_64-efi/grub.cfg
 
-$tar cvf memdisk.tar memdisk/*
+$tar -cvf memdisk.tar -C memdisk .
 ```
 2. Recreate bootx64.efi with EXT4 support
 ```
