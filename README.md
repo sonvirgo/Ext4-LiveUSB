@@ -1,4 +1,8 @@
 # Ext4-LiveUSB
+
+[![Github All Releases](https://img.shields.io/github/downloads/sonvirgo/Ext4-LiveUSB/total.svg)]()
+
+
 Hi all,
 I make a Live persistence on a hdd partition. <br/>
 It is actually Raw on FAT32 for Live part and EXT4 for persistence data part.<br/>
